@@ -1,0 +1,33 @@
+parameters:
+
+    sobolan.restnegotiator.encoders.default:
+        - "sobolan.restnegotiator.encoder.json"
+        - "sobolan.restnegotiator.encoder.xml"
+
+services:
+
+    sobolan.restnegotiator.serializer.factory:
+        class: SoboLAN\RestNegotiator\Factory\RestSerializerFactory
+        calls:
+            - [setContainer, ["@service_container"]]
+
+    sobolan.restnegotiator.encoder.json:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+
+    sobolan.restnegotiator.encoder.xml:
+        class: Symfony\Component\Serializer\Encoder\XmlEncoder
+
+    sobolan.restnegotiator.version.parser:
+        class: SoboLAN\RestNegotiator\Version\VersionParser
+
+    sobolan.restnegotiator.format.parser:
+        class: SoboLAN\RestNegotiator\Format\FormatParser
+
+    sobolan.restnegotiator.transformer.list:
+        class: SoboLAN\RestNegotiator\Transformers\ListTransformer
+
+    sobolan.restnegotiator.transformer.entity:
+        class: SoboLAN\RestNegotiator\Transformers\EntityTransformer
+
+    sobolan.restnegotiatorilius.contentnegotiator.transformer.representation:
+        class: SoboLAN\RestNegotiator\Transformers\RepresentationTransformer
