@@ -1,0 +1,20 @@
+/vendor/
+/bin
+
+# Ignore build directory for continuous integration
+/build/
+
+# - IDE specific files
+# Eclipse
+/.project
+/.settings/
+/.buildpath
+
+# Netbeans
+/nbproject
+
+# phpStorm
+/.idea
+
+# Sublime Text
+sftp-config.json

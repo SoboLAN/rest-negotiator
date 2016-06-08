@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+        backupGlobals               = "false"
+        backupStaticAttributes      = "false"
+        colors                      = "true"
+        convertErrorsToExceptions   = "true"
+        convertNoticesToExceptions  = "true"
+        convertWarningsToExceptions = "true"
+        processIsolation            = "false"
+        stopOnFailure               = "false"
+        syntaxCheck                 = "true"
+        timeoutForSmallTests        = "1"
+        timeoutForMediumTests       = "5"
+        timeoutForLargTests         = "10"
+        bootstrap                   = "vendor/autoload.php"
+        mapTestClassNameToCoveredClassName = "true"
+        >
+
+    <testsuites>
+        <testsuite name="sobolan-restnegotiator">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true" addUncoveredFilesFromWhitelist="true">
+            <directory>./src</directory>
+            <exclude>
+                <director>./tests</director>
+            </exclude>
+        </whitelist>
+    </filter>
+
+</phpunit>
