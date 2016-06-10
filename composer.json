@@ -1,5 +1,6 @@
 {
     "name": "sobolan/rest-negotiator",
+    "license": "MIT",
     "type": "library",
     "description": "A library that allows negotiating content in your REST Webservices",
     "authors": [
